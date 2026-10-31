@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Portfolio | Virtual Assistant</title>
+<meta name="description" content="Prince T. Miras: entry-level virtual assistant and Information Systems student. Projects, skills and contact.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="nav" id="top">
+  <a class="logo" href="#top" id="logoName">Your Name</a>
+  <nav id="menu" aria-label="Main">
+    <a href="#about">About</a><a href="#experience">Experience</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#contact">Contact</a>
+  </nav>
+  <div class="nav-actions">
+    <button class="icon-btn" id="themeBtn" aria-label="Toggle dark mode">◐</button>
+    <button class="icon-btn burger" id="burger" aria-label="Open menu" aria-expanded="false">☰</button>
+  </div>
+</header>
+
+<main>
+<section class="hero">
+  <div class="hero-text">
+    <img class="avatar" src="assets/prince.jpg" alt="Photo of Prince Miras" width="120" height="120" onerror="this.remove()">
+    <p class="badge">Open for part-time VA work</p>
+    <h1>Organized, fast-learning <span id="typed"></span></h1>
+    <p class="lead">4th-year Information Systems student and MIS intern. I handle data encoding, file organization and software setup, and I've built real systems for real businesses. I bring that same care to your inbox, spreadsheets and schedule.</p>
+    <div class="cta">
+      <a class="btn primary" href="#contact">Hire me</a>
+      <a class="btn" id="resumeBtn" href="assets/Prince_Miras_Resume.pdf" download>Download resume</a>
+      <a class="btn ghost" href="#projects">See my projects</a>
+    </div>
+  </div>
+  <aside class="board" aria-label="Sample daily task board">
+    <h2>A day I can handle for you</h2>
+    <p class="muted small">Tap to check them off.</p>
+    <ul id="tasks"></ul>
+    <div class="bar"><span id="barFill"></span></div>
+    <p class="small" id="barText">0 of 5 done</p>
+  </aside>
+</section>
+
+<section id="about" class="sec">
+  <h2>About me</h2>
+  <div class="about">
+    <p>I'm a Bachelor of Science in Information Systems student at Jose Rizal Memorial State University, Katipunan Campus, from Dipolog City, Philippines. I speak English, Tagalog and Bisaya. I build small business systems for sales, inventory and rice milling, so I'm used to dealing with records, deadlines and details that must be right.</p>
+    <p>I'm applying for a part-time administrative VA role because I like keeping things in order and I learn tools quickly. I'm still early in my career, so I follow instructions closely, ask when unsure, and double-check my work. I expect to graduate in June 2027.</p>
+    <div class="stats">
+      <div><b data-count="3">0</b><span>Systems built</span></div>
+      <div><b data-count="12">0</b><span>Tools and skills</span></div>
+      <div><b data-count="100">0</b><span>% willing to learn</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="experience" class="sec">
+  <h2>Experience</h2>
+  <article class="card">
+    <h3>MIS Student Intern</h3>
+    <p class="muted small">Jose Rizal Memorial State University, Katipunan Campus (MIS Office), July 2026 to present</p>
+    <ul>
+      <li>Encode and manage institutional data accurately while keeping records confidential.</li>
+      <li>Install and configure software, including Adobe Photoshop, Animate and After Effects, on campus workstations.</li>
+      <li>Set up full workstations and configure printers, drivers and connections.</li>
+      <li>Maintain and deep-clean computer units to keep them running well.</li>
+    </ul>
+  </article>
+</section>
+
+<section id="skills" class="sec alt">
+  <h2>Skills I can offer</h2>
+  <p class="muted">Self-rated honestly. I'm still a student, but I learn quickly and can do each of these.</p>
+  <div class="tabs" id="skillTabs"></div>
+  <ul class="skills" id="skillList"></ul>
+</section>
+
+<section id="projects" class="sec">
+  <h2>Projects</h2>
+  <p class="muted">Real systems I designed and coded. Open one to see what it does.</p>
+  <div class="tabs" id="filters"></div>
+  <div class="grid" id="projectGrid"></div>
+</section>
+
+<section id="contact" class="sec alt">
+  <h2>Let's work together</h2>
+  <div class="contact">
+    <div>
+      <p>Send me a message and it goes straight to my email. I'll reply as soon as I can, and I'm happy to take a short paid trial task.</p>
+      <p><b>Email:</b> <span id="emailText"></span> <button class="chip" id="copyBtn">Copy</button></p>
+      <p class="muted small">Availability: <span id="avail"></span></p>
+    </div>
+    <form id="form" novalidate>
+      <label>Your name<input id="fName" required autocomplete="name"></label>
+      <label>Your email<input id="fEmail" type="email" required autocomplete="email"></label>
+      <label>Message<textarea id="fMsg" rows="4" required></textarea></label>
+      <input type="text" id="honey" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="display:none">
+      <p class="error" id="err" role="alert"></p>
+      <button class="btn primary" id="sendBtn" type="submit">Send message</button>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer><span id="year"></span> <span id="footName"></span></footer>
+<button class="to-top" id="toTop" aria-label="Back to top">↑</button>
+<div class="toast" id="toast" role="status"></div>
+
+<div class="modal" id="modal" aria-hidden="true">
+  <div class="dialog" role="dialog" aria-modal="true" aria-labelledby="mTitle">
+    <button class="icon-btn close" id="mClose" aria-label="Close">✕</button>
+    <div class="slider" id="slider" aria-roledescription="carousel" aria-label="Project screenshots">
+      <div class="slides" id="mPics"></div>
+      <button class="sbtn prev" id="sPrev" aria-label="Previous screenshot">‹</button>
+      <button class="sbtn next" id="sNext" aria-label="Next screenshot">›</button>
+      <span class="count" id="sCount"></span>
+    </div>
+    <div class="dots" id="sDots"></div>
+    <h3 id="mTitle"></h3>
+    <p id="mDesc"></p>
+    <h4>What it does</h4><ul id="mFeat"></ul>
+    <h4>Built with</h4><p class="tags" id="mTech"></p>
+  </div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
